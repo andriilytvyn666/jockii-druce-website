@@ -3,6 +3,6 @@
     <div class="flex flex-col grow mx-12 justify-center">
       <slot />
     </div>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
