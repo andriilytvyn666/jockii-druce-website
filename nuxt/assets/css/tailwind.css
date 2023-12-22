@@ -1,15 +1,3 @@
-@font-face {
-  font-family: Helvetica;
-  src: url('~/assets/fonts/Helvetica.ttf');
-  font-weight: regular;
-}
-
-@font-face {
-  font-family: Helvetica;
-  src: url('~/assets/fonts/Helvetica-Bold.ttf');
-  font-weight: bold;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,7 +8,8 @@
   }
 
   body {
-    @apply bg-bg text-fg  text-body-md-700;
+    @apply bg-bg text-fg text-body-md-500;
+    font-family: 'DIN Next W1G';
   }
 }
 

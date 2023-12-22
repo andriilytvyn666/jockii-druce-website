@@ -10,17 +10,32 @@ export default {
   theme: {
     fontFamily: {
       sans: 'Helvetica, sans-serif',
+      monospace: 'JetBrains Mono, monospace',
     },
     fontSize: {
       'body-md-700': [
-        '1.25rem',
+        '1rem',
         {
           lineHeight: '1.5rem',
           fontWeight: '700',
         },
       ],
+      'body-md-600': [
+        '1rem',
+        {
+          lineHeight: '1.5rem',
+          fontWeight: '600',
+        },
+      ],
+      'body-md-500': [
+        '1rem',
+        {
+          lineHeight: '1.5rem',
+          fontWeight: '500',
+        },
+      ],
       'body-md-400': [
-        '1.25rem',
+        '1rem',
         {
           lineHeight: '1.5rem',
           fontWeight: '400',

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-16">
+  <div class="flex gap-6">
     <MainMenu />
     <TrackList />
     <Lyrics />
