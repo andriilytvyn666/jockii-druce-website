@@ -1,10 +1,7 @@
 <template>
-  <div class="overflow-y-scroll max-h-screen ml-2">
-    <span
-      :key="i"
-      v-for="i in Array(3).keys()"
-      class="text-body-md-500 flex flex-col my-6"
-      ><p>
+  <div class="overflow-y-scroll max-h-screen">
+    <span>
+      <p>
         At the bus stop, crushing rocks<br />
         (Crush, crush, crush, crush, C-c-crush, crush)
       </p>

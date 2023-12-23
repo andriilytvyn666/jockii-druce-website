@@ -9,43 +9,14 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: 'Helvetica, sans-serif',
-      monospace: 'JetBrains Mono, monospace',
+      sans: 'IBM Plex Sans, sans-serif',
     },
     fontSize: {
-      'body-md-700': [
-        '1rem',
-        {
-          lineHeight: '1.5rem',
-          fontWeight: '700',
-        },
-      ],
-      'body-md-600': [
-        '1rem',
-        {
-          lineHeight: '1.5rem',
-          fontWeight: '600',
-        },
-      ],
-      'body-md-500': [
+      body: [
         '1rem',
         {
           lineHeight: '1.5rem',
           fontWeight: '500',
-        },
-      ],
-      'body-md-400': [
-        '1rem',
-        {
-          lineHeight: '1.5rem',
-          fontWeight: '400',
-        },
-      ],
-      'body-sm-400': [
-        '1rem',
-        {
-          lineHeight: '1.25rem',
-          fontWeight: '400',
         },
       ],
     },
@@ -54,7 +25,6 @@ export default {
       fg: {
         DEFAULT: '#535252',
         active: '#bcbcbc',
-        selected: '#727272',
       },
     },
     extend: {
