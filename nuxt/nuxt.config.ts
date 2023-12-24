@@ -8,7 +8,17 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-icons',
     '@nuxtjs/sanity',
+    [
+      '@pinia/nuxt',
+      {
+        storesDirs: ['./stores/**'],
+        autoImports: ['defineStore', 'acceptHMRUpdate'],
+      },
+    ],
   ],
+  imports: {
+    dirs: ['stores'],
+  },
   sanity: {
     // TODO: boostrap sanity
   },
