@@ -3,6 +3,7 @@
     <MainMenu />
     <TrackList v-if="menuItem === 'album'" />
     <Lyrics v-if="menuItem === 'album' && currentTrack !== 'none'" />
+    <Streaming v-if="menuItem === 'streaming'" />
   </div>
 </template>
 
