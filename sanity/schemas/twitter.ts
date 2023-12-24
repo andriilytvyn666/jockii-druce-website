@@ -11,7 +11,7 @@ export default {
       validation: (rule: Rule) => rule.min(3),
     },
     {
-      name: 'date',
+      name: 'posts',
       type: 'array',
       of: [{type: 'twitterPost'}],
     },
