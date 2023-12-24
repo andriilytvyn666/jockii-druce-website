@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-1 [&>button]:text-left [&>button]:w-fit">
+  <div class="flex flex-col gap-1 [&>button]:text-left [&>button]:w-fit py-6">
     <h1 class="text-fg-active whitespace-nowrap pr-0.5">jockii druce</h1>
     <button
       @click="setMenuItem('album')"

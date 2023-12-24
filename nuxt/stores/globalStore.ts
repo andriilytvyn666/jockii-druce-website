@@ -6,6 +6,10 @@ export const useGlobalStore = defineStore('global', () => {
     } else {
       menuItem.value = item
     }
+
+    if (menuItem.value === 'album') {
+      setCurrentTrack('none')
+    }
   }
 
   const currentTrack = ref<number | 'none'>('none')

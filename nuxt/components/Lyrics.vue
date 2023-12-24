@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-y-scroll max-h-screen">
+  <div class="overflow-y-scroll max-h-screen py-6">
     <span>
       <p>
         At the bus stop, crushing rocks<br />

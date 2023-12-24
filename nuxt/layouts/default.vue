@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col min-h-screen">
-    <div class="flex flex-col grow mx-8 my-6">
+  <div class="flex flex-col min-h-screen max-h-screen">
+    <div class="flex flex-col grow mx-8">
       <slot />
     </div>
     <!-- <Footer /> -->

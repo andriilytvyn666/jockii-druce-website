@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-y-scroll max-h-screen">
+  <div class="overflow-y-scroll max-h-screen py-6">
     <div class="flex flex-col gap-1">
       <button
         :key="i"
