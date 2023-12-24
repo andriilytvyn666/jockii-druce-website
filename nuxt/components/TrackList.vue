@@ -5,12 +5,14 @@
         :key="i"
         v-for="i in new Array(9).keys()"
         :class="
-          (currentTrack == i + 1 ? 'text-fg-active ' : ' ') + 'flex gap-2 track'
+          (currentTrack == i + 1 ? 'text-fg-active underline ' : ' ') +
+          'flex gap-2 track'
         "
         @click="setCurrentTrack(i + 1)"
       >
-        <span>0{{ i + 1 }}</span>
-        <p class="whitespace-nowrap">Peroxide</p>
+        <span class="whitespace-nowrap"
+          >0{{ i + 1 }} {{ '\xa0\xa0Peroxide' }}</span
+        >
       </button>
     </div>
   </div>

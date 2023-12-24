@@ -1,1 +1,1 @@
-type MenuItem = 'none' | 'album' | 'streaming' | 'pix'
+type MenuItem = 'none' | 'twitter' | 'album' | 'streaming' | 'pix'
