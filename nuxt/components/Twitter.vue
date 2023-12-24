@@ -14,7 +14,7 @@
 <script setup lang="ts">
 const query = `*[_type == "twitter"] { posts } [0]`
 
-const { data } = useSanityQuery<Twitter>(query)
+const { data } = await useSanityQuery<Twitter>(query)
 
 const posts = (data.value ? data.value.posts : []).sort((a, b) => {
   const dateA = new Date(a.date)
