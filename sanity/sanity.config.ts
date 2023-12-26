@@ -21,6 +21,9 @@ export default defineConfig({
               .title('Twitter')
               .icon(TwitterIcon)
               .child(S.document().schemaType('twitter').documentId('twitter')),
+            S.listItem()
+              .title('Tracks')
+              .child(S.document().schemaType('trackList').documentId('trackList')),
           ]),
     }),
     visionTool(),

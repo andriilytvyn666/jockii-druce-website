@@ -8,20 +8,32 @@ export const useGlobalStore = defineStore('global', () => {
     }
 
     if (menuItem.value === 'album') {
-      setCurrentTrack('none')
+      setCurrentTrack({ name: 'none', lyrics: '' })
     }
   }
 
-  const currentTrack = ref<number | 'none'>('none')
-  const setCurrentTrack = (track: number | 'none') => {
-    if (currentTrack.value === track && currentTrack.value !== 'none') {
-      currentTrack.value = 'none'
+  const currentTrack = ref<Track>({ name: 'none', lyrics: '' })
+
+  const setCurrentTrack = (track: Track) => {
+    if (
+      currentTrack.value.name === track.name &&
+      currentTrack.value.name !== 'none'
+    ) {
+      currentTrack.value = {
+        name: 'none',
+        lyrics: '',
+      }
     } else {
       currentTrack.value = track
     }
   }
 
-  return { menuItem, setMenuItem, currentTrack, setCurrentTrack }
+  return {
+    menuItem,
+    setMenuItem,
+    currentTrack,
+    setCurrentTrack,
+  }
 })
 
 if (import.meta.hot) {
