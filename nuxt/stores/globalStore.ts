@@ -1,4 +1,10 @@
 export const useGlobalStore = defineStore('global', () => {
+  const audio = ref<ReturnedValue>()
+
+  const setAudio = (newAudio: ReturnedValue) => {
+    audio.value = newAudio
+  }
+
   const menuItem = ref<MenuItem>('none')
   const setMenuItem = (item: MenuItem) => {
     if (menuItem.value === item) {
@@ -29,6 +35,8 @@ export const useGlobalStore = defineStore('global', () => {
   }
 
   return {
+    audio,
+    setAudio,
     menuItem,
     setMenuItem,
     currentTrack,

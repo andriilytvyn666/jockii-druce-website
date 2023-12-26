@@ -9,7 +9,16 @@
             ? 'text-fg-active underline '
             : '') + 'flex gap-2 track'
         "
-        @click="setCurrentTrack(track)"
+        @click="
+          () => {
+            // TODO: rework for dynamic track list
+            setCurrentTrack(track)
+            if (audio.isPlaying.value) {
+              audio.stop()
+              audio.play()
+            } else audio.play()
+          }
+        "
       >
         <span :class="'whitespace-nowrap'">
           {{ getTrackNameString(track) }}
@@ -20,8 +29,10 @@
 </template>
 
 <script setup lang="ts">
+import { useSound } from '@vueuse/sound'
+
 const { currentTrack } = storeToRefs(useGlobalStore())
-const { setCurrentTrack } = useGlobalStore()
+const { setCurrentTrack, setAudio } = useGlobalStore()
 
 const query = groq`*[_type == "trackList"].tracks [0]`
 const { data } = await useSanityQuery<Track[]>(query)
@@ -31,6 +42,9 @@ const getTrackNameString = (track: Track): string => {
   const trackNum = trackList.indexOf(track) + 1
   return `${trackNum < 10 ? '0' : ''}${trackNum}\xa0\xa0\xa0${track.name}`
 }
+
+const audio = useSound('/track.mp3')
+setAudio(audio)
 </script>
 
 <style scoped lang="postcss">
