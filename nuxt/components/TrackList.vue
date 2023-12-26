@@ -15,7 +15,7 @@
             setCurrentTrack(track)
             if (audio.isPlaying.value) {
               audio.stop()
-              audio.play()
+              if (currentTrack.name !== 'none') audio.play()
             } else audio.play()
           }
         "
