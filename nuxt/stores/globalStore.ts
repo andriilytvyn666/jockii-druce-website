@@ -16,6 +16,8 @@ export const useGlobalStore = defineStore('global', () => {
     if (menuItem.value === 'album') {
       setCurrentTrack({ name: 'none', lyrics: '' })
     }
+
+    audio.value?.stop()
   }
 
   const currentTrack = ref<Track>({ name: 'none', lyrics: '' })
