@@ -9,17 +9,18 @@ export default {
       name: 'name',
       type: 'string',
       description: 'not visible on website',
-      validation: (rule: Rule) => rule.min(3),
+      validation: (rule: Rule) => rule.min(3).required(),
     },
     {
       name: 'post',
       type: 'string',
       description: '32-128 characters long post',
-      validation: (rule: Rule) => rule.min(32).max(128),
+      validation: (rule: Rule) => rule.min(32).max(128).required(),
     },
     {
       name: 'date',
       type: 'date',
+      validation: (rule: Rule) => rule.required(),
     },
   ],
 }

@@ -8,13 +8,13 @@ export default {
     {
       name: 'name',
       type: 'string',
-      validation: (rule: Rule) => rule.min(3),
+      validation: (rule: Rule) => rule.min(3).required(),
     },
     {
       name: 'tracks',
       type: 'array',
       of: [{type: 'track'}],
-      validation: (rule: Rule) => rule.unique(),
+      validation: (rule: Rule) => rule.unique().required(),
     },
   ],
 }

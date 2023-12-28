@@ -8,12 +8,13 @@ export default {
     {
       name: 'name',
       type: 'string',
-      validation: (rule: Rule) => rule.min(3),
+      validation: (rule: Rule) => rule.min(3).required(),
     },
     {
       name: 'posts',
       type: 'array',
       of: [{type: 'twitterPost'}],
+      validation: (rule: Rule) => rule.required(),
     },
   ],
 }

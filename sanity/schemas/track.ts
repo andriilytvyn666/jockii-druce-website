@@ -8,13 +8,19 @@ export default {
     {
       name: 'name',
       type: 'string',
-      validation: (rule: Rule) => rule.min(3),
+      validation: (rule: Rule) => rule.min(3).required(),
     },
     {
       name: 'lyrics',
       type: 'array',
       of: [{type: 'block'}],
-      validation: (rule: Rule) => rule.min(1),
+      validation: (rule: Rule) => rule.min(1).required(),
+    },
+    {
+      name: 'mp3',
+      type: 'file',
+      options: {accept: 'audio/mpeg'},
+      validation: (rule: Rule) => rule.required(),
     },
   ],
 }
