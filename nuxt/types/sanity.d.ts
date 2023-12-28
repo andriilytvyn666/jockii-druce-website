@@ -12,3 +12,7 @@ type Track = {
 type Twitter = {
   posts: twitterPost[]
 }
+
+type image = {
+  asset: { _ref: string }
+}

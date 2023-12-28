@@ -24,6 +24,7 @@ export default defineConfig({
             S.listItem()
               .title('Tracks')
               .child(S.document().schemaType('trackList').documentId('trackList')),
+            S.listItem().title('Pix').child(S.document().schemaType('pix').documentId('pix')),
           ]),
     }),
     visionTool(),
