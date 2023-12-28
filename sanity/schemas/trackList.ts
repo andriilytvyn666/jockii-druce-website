@@ -14,6 +14,7 @@ export default {
       name: 'tracks',
       type: 'array',
       of: [{type: 'track'}],
+      validation: (rule: Rule) => rule.unique(),
     },
   ],
 }

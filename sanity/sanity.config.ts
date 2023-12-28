@@ -3,6 +3,8 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {TwitterIcon} from '@sanity/icons'
+import {IoMusicalNotes} from 'react-icons/io5'
+import {FaRegImage} from 'react-icons/fa6'
 
 export default defineConfig({
   name: 'default',
@@ -23,8 +25,12 @@ export default defineConfig({
               .child(S.document().schemaType('twitter').documentId('twitter')),
             S.listItem()
               .title('Tracks')
+              .icon(IoMusicalNotes)
               .child(S.document().schemaType('trackList').documentId('trackList')),
-            S.listItem().title('Pix').child(S.document().schemaType('pix').documentId('pix')),
+            S.listItem()
+              .icon(FaRegImage)
+              .title('Pix')
+              .child(S.document().schemaType('pix').documentId('pix')),
           ]),
     }),
     visionTool(),
