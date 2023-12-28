@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     projectId: '4d7emgbh',
     dataset: 'production',
     useCdn: true,
+    globalHelper: true,
   },
   vite: {
     plugins: [eslintPlugin()],

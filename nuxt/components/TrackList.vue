@@ -36,14 +36,32 @@ const { setCurrentTrack, setAudio } = useGlobalStore()
 
 const query = groq`*[_type == "trackList"].tracks [0]`
 const { data } = await useSanityQuery<Track[]>(query)
+
+import { buildFileUrl, parseAssetId } from '@sanity/asset-utils'
+
+const config = useSanity().config
+
 const trackList = data.value ? data.value : []
 
 const getTrackNameString = (track: Track): string => {
   const trackNum = trackList.indexOf(track) + 1
   return `${trackNum < 10 ? '0' : ''}${trackNum}\xa0\xa0\xa0${track.name}`
 }
+const asset = parseAssetId(data.value![0].mp3!.asset._ref)
 
-const audio = useSound('/track.mp3')
+const audio = useSound(
+  buildFileUrl(
+    {
+      assetId: asset.assetId,
+      extension: asset.extension,
+    },
+    {
+      projectId: config.projectId,
+      dataset: config.dataset,
+    }
+  )
+)
+
 setAudio(audio)
 </script>
 
