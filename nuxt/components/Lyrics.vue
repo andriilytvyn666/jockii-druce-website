@@ -2,7 +2,6 @@
   <div class="overflow-y-scroll max-h-screen py-6">
     <span>
       <PortableText :key="currentTrack.name" :value="currentTrack.lyrics" />
-      <!-- {{ currentTrack.lyrics }} -->
     </span>
   </div>
 </template>

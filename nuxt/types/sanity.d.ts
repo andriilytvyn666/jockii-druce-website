@@ -7,7 +7,7 @@ type twitterPost = {
 type Track = {
   name: string
   lyrics: Any
-  mp3?: audio
+  mp3: audio
 }
 
 type Twitter = {

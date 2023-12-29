@@ -1,11 +1,8 @@
+const emtpyTrack: Track = { name: 'none', lyrics: '' }
+
 export const useGlobalStore = defineStore('global', () => {
-  const audio = ref<ReturnedValue>()
-
-  const setAudio = (newAudio: ReturnedValue) => {
-    audio.value = newAudio
-  }
-
   const menuItem = ref<MenuItem>('none')
+
   const setMenuItem = (item: MenuItem) => {
     if (menuItem.value === item) {
       menuItem.value = 'none'
@@ -14,31 +11,24 @@ export const useGlobalStore = defineStore('global', () => {
     }
 
     if (menuItem.value === 'album') {
-      setCurrentTrack({ name: 'none', lyrics: '' })
+      setCurrentTrack(emtpyTrack)
     }
-
-    audio.value?.stop()
   }
 
-  const currentTrack = ref<Track>({ name: 'none', lyrics: '' })
+  const currentTrack = ref<Track>(emtpyTrack)
 
   const setCurrentTrack = (track: Track) => {
     if (
       currentTrack.value.name === track.name &&
       currentTrack.value.name !== 'none'
     ) {
-      currentTrack.value = {
-        name: 'none',
-        lyrics: '',
-      }
+      currentTrack.value = emtpyTrack
     } else {
       currentTrack.value = track
     }
   }
 
   return {
-    audio,
-    setAudio,
     menuItem,
     setMenuItem,
     currentTrack,
