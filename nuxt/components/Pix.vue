@@ -1,15 +1,24 @@
 <template>
   <div
-    class="flex flex-col gap-4 overflow-auto max-h-screen py-6 max-w-[48rem]"
+    class="flex flex-col overflow-y-scroll max-h-screen py-6 max-w-[48rem] [&>*]:w-fit"
   >
-    <video class="w-full" controls>
+    <!-- TODO: add video support -->
+    <!-- <video class="w-full" controls>
       <source type="video/mp4" src="/video.mp4" />
-    </video>
-    <NuxtImg
-      :key="i"
-      v-for="i in Array(5).keys()"
-      src="/images/16x9.jpg"
-      class="aspect-video"
+    </video> -->
+
+    <!-- TODO: use NuxtImage or SanityImage -->
+    <SanityImage
+      :key="image.asset._ref"
+      v-for="image in images"
+      :asset-id="image.asset._ref"
+      max-w="768"
     />
   </div>
 </template>
+
+<script setup lang="ts">
+const query = groq`*[_type == "pix"][0].pix {asset}`
+const { data } = await useSanityQuery<image[]>(query)
+const images = data.value ? data.value : []
+</script>

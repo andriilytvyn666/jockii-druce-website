@@ -20,7 +20,10 @@ export default defineNuxtConfig({
     dirs: ['stores'],
   },
   sanity: {
-    // TODO: boostrap sanity
+    projectId: '4d7emgbh',
+    dataset: 'production',
+    useCdn: true,
+    globalHelper: true,
   },
   vite: {
     plugins: [eslintPlugin()],
