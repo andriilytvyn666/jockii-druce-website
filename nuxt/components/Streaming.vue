@@ -22,14 +22,7 @@
 <script setup lang="ts">
 const query = groq`*[_type == "streamingLinks" ] { spotify, appleMusic, youtubeMusic, soundCloud } [0]`
 const { data } = await useSanityQuery<StreamingLinks>(query)
-const links = data.value
-  ? data.value
-  : {
-      spotify: 'https://open.spotify.com',
-      appleMusic: 'https://music.apple.com',
-      youtubeMusic: 'https://music.youtube.com',
-      soundCloud: 'https://soundcloud.com',
-    }
+const links = data.value!
 </script>
 
 <style scoped lang="postcss">

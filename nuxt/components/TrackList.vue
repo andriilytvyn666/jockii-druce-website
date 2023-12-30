@@ -36,7 +36,6 @@ const { data } = await useSanityQuery<Track[]>(query)
 const trackList = data.value ? data.value : []
 
 const config = useSanity().config
-
 const audioList: ReturnedValue[] = []
 
 for (let track of trackList) {

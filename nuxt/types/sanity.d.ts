@@ -19,6 +19,18 @@ type StreamingLinks = {
   soundCloud: string
 }
 
+type MainMenu = {
+  title: mainMenuItem
+  album: mainMenuItem
+  streaming: mainMenuItem
+  pix: mainMenuItem
+}
+
+type mainMenuItem = {
+  name: string
+  enabled: boolean
+}
+
 type audio = {
   asset: { _ref: string }
 }

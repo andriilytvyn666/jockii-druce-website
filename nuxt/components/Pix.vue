@@ -20,5 +20,5 @@
 <script setup lang="ts">
 const query = groq`*[_type == "pix"][0].pix {asset}`
 const { data } = await useSanityQuery<image[]>(query)
-const images = data.value
+const images = data.value ? data.value : []
 </script>

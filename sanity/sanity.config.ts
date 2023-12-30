@@ -20,6 +20,9 @@ export default defineConfig({
           .title('Main')
           .items([
             S.listItem()
+              .title('Main Menu')
+              .child(S.document().schemaType('mainMenu').documentId('mainMenu')),
+            S.listItem()
               .title('Twitter')
               .icon(TwitterIcon)
               .child(S.document().schemaType('twitter').documentId('twitter')),
