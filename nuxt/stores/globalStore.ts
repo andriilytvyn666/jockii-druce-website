@@ -21,7 +21,7 @@ export const useGlobalStore = defineStore('global', () => {
       setCurrentTrack(emtpyTrack)
     }
 
-    currentAudio.value.stop()
+    if (currentAudio.value) currentAudio.value.stop()
   }
 
   const setCurrentAudio = (audio: ReturnedValue) => {

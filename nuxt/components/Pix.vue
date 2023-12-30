@@ -21,6 +21,4 @@
 const query = groq`*[_type == "pix"][0].pix {asset}`
 const { data } = await useSanityQuery<image[]>(query)
 const images = data.value
-
-console.log(data.value)
 </script>

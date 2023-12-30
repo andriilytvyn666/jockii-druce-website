@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-const query = `*[_type == "twitter"] { posts } [0]`
+const query = groq`*[_type == "twitter"] { posts } [0]`
 
 const { data } = await useSanityQuery<Twitter>(query)
 

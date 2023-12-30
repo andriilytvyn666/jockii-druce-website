@@ -50,8 +50,6 @@ for (let track of trackList) {
   )
 }
 
-console.log(audioList)
-
 const stopAllTracks = (track: Track) => {
   setCurrentAudio(audioList[trackList.indexOf(track)])
 
