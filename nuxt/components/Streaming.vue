@@ -1,23 +1,36 @@
 <template>
   <div class="flex flex-col gap-1 [&>button]:text-left [&>button]:w-fit py-6">
-    <a href="https://spotify.com" target="_blank" class="button-group">
+    <a :href="links.spotify" target="_blank" class="button-group">
       <NuxtIcon name="streaming/spotify" />
       <span>spotify</span>
     </a>
-    <a href="https://music.apple.com" target="_blank" class="button-group">
+    <a :href="links.appleMusic" target="_blank" class="button-group">
       <NuxtIcon name="streaming/applemusic" />
       <span>apple music</span>
     </a>
-    <a href="https://music.youtube.com" target="_blank" class="button-group">
+    <a :href="links.youtubeMusic" target="_blank" class="button-group">
       <NuxtIcon name="streaming/youtubemusic" />
       <span>youtube music</span>
     </a>
-    <a href="https://soundcloud.com" target="_blank" class="button-group">
+    <a :href="links.soundCloud" target="_blank" class="button-group">
       <NuxtIcon name="streaming/soundcloud" />
       <span>soundcloud</span>
     </a>
   </div>
 </template>
+
+<script setup lang="ts">
+const query = groq`*[_type == "streamingLinks" ] { spotify, appleMusic, youtubeMusic, soundCloud } [0]`
+const { data } = await useSanityQuery<StreamingLinks>(query)
+const links = data.value
+  ? data.value
+  : {
+      spotify: 'https://open.spotify.com',
+      appleMusic: 'https://music.apple.com',
+      youtubeMusic: 'https://music.youtube.com',
+      soundCloud: 'https://soundcloud.com',
+    }
+</script>
 
 <style scoped lang="postcss">
 .button-group {

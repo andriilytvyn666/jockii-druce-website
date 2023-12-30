@@ -12,6 +12,13 @@ type Twitter = {
   posts: twitterPost[]
 }
 
+type StreamingLinks = {
+  spotify: string
+  appleMusic: string
+  youtubeMusic: string
+  soundCloud: string
+}
+
 type audio = {
   asset: { _ref: string }
 }

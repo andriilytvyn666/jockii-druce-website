@@ -31,6 +31,9 @@ export default defineConfig({
               .icon(FaRegImage)
               .title('Pix')
               .child(S.document().schemaType('pix').documentId('pix')),
+            S.listItem()
+              .title('Streaming')
+              .child(S.document().schemaType('streamingLinks').documentId('streamingLinks')),
           ]),
     }),
     visionTool(),
