@@ -18,6 +18,7 @@ export default {
     },
     {
       name: 'mp3',
+      title: 'Audio.mp3',
       type: 'file',
       options: {accept: 'audio/mpeg'},
       validation: (rule: Rule) => rule.required(),

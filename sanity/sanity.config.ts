@@ -2,9 +2,9 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import {TwitterIcon} from '@sanity/icons'
+import {TwitterIcon, MenuIcon} from '@sanity/icons'
 import {IoMusicalNotes} from 'react-icons/io5'
-import {FaRegImage} from 'react-icons/fa6'
+import {FaRegImage, FaSpotify} from 'react-icons/fa6'
 
 export default defineConfig({
   name: 'default',
@@ -20,6 +20,7 @@ export default defineConfig({
           .title('Main')
           .items([
             S.listItem()
+              .icon(MenuIcon)
               .title('Main Menu')
               .child(S.document().title('Main Menu').schemaType('mainMenu').documentId('mainMenu')),
             S.listItem()
@@ -29,14 +30,20 @@ export default defineConfig({
             S.listItem()
               .title('Tracks')
               .icon(IoMusicalNotes)
-              .child(S.document().schemaType('trackList').documentId('trackList')),
+              .child(S.document().title('Album').schemaType('trackList').documentId('trackList')),
             S.listItem()
               .icon(FaRegImage)
               .title('Pix')
-              .child(S.document().schemaType('pix').documentId('pix')),
+              .child(S.document().title('Pix').schemaType('pix').documentId('pix')),
             S.listItem()
               .title('Streaming')
-              .child(S.document().schemaType('streamingLinks').documentId('streamingLinks')),
+              .icon(FaSpotify)
+              .child(
+                S.document()
+                  .title('Streaming')
+                  .schemaType('streamingLinks')
+                  .documentId('streamingLinks'),
+              ),
           ]),
     }),
     visionTool(),

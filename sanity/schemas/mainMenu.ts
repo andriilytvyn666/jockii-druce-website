@@ -8,21 +8,25 @@ export default {
     {
       name: 'title',
       type: 'mainMenuItem',
+      options: {collapsible: true, collapsed: true},
       validation: (rule: Rule) => rule.required(),
     },
     {
       name: 'album',
       type: 'mainMenuItem',
+      options: {collapsible: true, collapsed: true},
       validation: (rule: Rule) => rule.required(),
     },
     {
       name: 'streaming',
       type: 'mainMenuItem',
+      options: {collapsible: true, collapsed: true},
       validation: (rule: Rule) => rule.required(),
     },
     {
       name: 'pix',
       type: 'mainMenuItem',
+      options: {collapsible: true, collapsed: true},
       validation: (rule: Rule) => rule.required(),
     },
   ],

@@ -6,11 +6,6 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'name',
-      type: 'string',
-      validation: (rule: Rule) => rule.min(3).required(),
-    },
-    {
       name: 'tracks',
       type: 'array',
       of: [{type: 'track'}],
