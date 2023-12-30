@@ -6,6 +6,9 @@ const emtpyTrack: Track = {
 
 export const useGlobalStore = defineStore('global', () => {
   const menuItem = ref<MenuItem>('none')
+  // TODO: add type to this ref
+  const currentAudio = ref()
+  const currentTrack = ref<Track>(emtpyTrack)
 
   const setMenuItem = (item: MenuItem) => {
     if (menuItem.value === item) {
@@ -19,7 +22,9 @@ export const useGlobalStore = defineStore('global', () => {
     }
   }
 
-  const currentTrack = ref<Track>(emtpyTrack)
+  const setCurrentAudio = (audio: ReturnedValue) => {
+    currentAudio.value = audio
+  }
 
   const setCurrentTrack = (track: Track) => {
     if (
@@ -35,6 +40,8 @@ export const useGlobalStore = defineStore('global', () => {
   return {
     menuItem,
     setMenuItem,
+    currentAudio,
+    setCurrentAudio,
     currentTrack,
     setCurrentTrack,
   }

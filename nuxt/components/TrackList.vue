@@ -28,8 +28,8 @@
 import { useSound } from '@vueuse/sound'
 import { buildFileUrl, parseFileAssetId } from '@sanity/asset-utils'
 
-const { currentTrack } = storeToRefs(useGlobalStore())
-const { setCurrentTrack } = useGlobalStore()
+const { currentTrack, currentAudio } = storeToRefs(useGlobalStore())
+const { setCurrentTrack, setCurrentAudio } = useGlobalStore()
 
 const query = groq`*[_type == "trackList"].tracks [0]`
 const { data } = await useSanityQuery<Track[]>(query)
@@ -38,8 +38,6 @@ const trackList = data.value ? data.value : []
 const config = useSanity().config
 
 const audioList: ReturnedValue[] = []
-
-const currentAudio = ref<ReturnedValue>()
 
 for (let track of trackList) {
   audioList.push(
@@ -56,6 +54,8 @@ console.log(audioList)
 
 const stopAllTracks = (track: Track) => {
   currentAudio.value = audioList[trackList.indexOf(track)]
+
+  console.log(currentAudio.value)
 
   currentAudio.value.isPlaying
     ? currentAudio.value.stop()
