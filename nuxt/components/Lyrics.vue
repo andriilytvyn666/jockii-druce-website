@@ -1,5 +1,7 @@
 <template>
-  <div class="overflow-y-scroll max-h-screen py-6">
+  <div
+    class="flex overflow-visible sm:overflow-y-scroll sm:max-h-screen sm:py-6 pb-24"
+  >
     <span>
       <PortableText :key="currentTrack.name" :value="currentTrack.lyrics" />
     </span>
