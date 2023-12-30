@@ -12,10 +12,17 @@ export default {
       sans: 'IBM Plex Sans, sans-serif',
     },
     fontSize: {
-      body: [
+      'body': [
         '1rem',
         {
           lineHeight: '1.5rem',
+          fontWeight: '500',
+        },
+      ],
+      'body-lg': [
+        '1.125rem',
+        {
+          lineHeight: '1.625rem',
           fontWeight: '500',
         },
       ],

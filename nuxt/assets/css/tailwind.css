@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-bg text-fg text-body;
+    @apply bg-bg text-fg sm:text-body text-body-lg;
   }
 
   * {
