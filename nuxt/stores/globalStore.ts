@@ -20,6 +20,8 @@ export const useGlobalStore = defineStore('global', () => {
     if (menuItem.value === 'album') {
       setCurrentTrack(emtpyTrack)
     }
+
+    currentAudio.value.stop()
   }
 
   const setCurrentAudio = (audio: ReturnedValue) => {

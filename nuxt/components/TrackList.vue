@@ -53,13 +53,13 @@ for (let track of trackList) {
 console.log(audioList)
 
 const stopAllTracks = (track: Track) => {
-  currentAudio.value = audioList[trackList.indexOf(track)]
+  setCurrentAudio(audioList[trackList.indexOf(track)])
 
-  console.log(currentAudio.value)
-
-  currentAudio.value.isPlaying
-    ? currentAudio.value.stop()
-    : currentAudio.value.play()
+  if (currentAudio.value.isPlaying) {
+    currentAudio.value.stop()
+  } else if (currentTrack.value.name !== 'none') {
+    currentAudio.value.play()
+  }
 
   for (let audio of audioList) {
     if (trackList.indexOf(track) !== audioList.indexOf(audio)) {
