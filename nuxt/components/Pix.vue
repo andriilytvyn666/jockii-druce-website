@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col overflow-y-scroll max-h-screen py-6 max-w-[48rem] [&>*]:w-fit"
+    class="flex flex-col overflow-y-scroll max-h-screen sm:py-6 pb-6 max-w-[48rem] [&>*]:w-fit"
   >
     <!-- TODO: add video support -->
     <!-- <video class="w-full" controls>

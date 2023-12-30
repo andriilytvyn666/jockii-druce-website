@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col gap-6 max-h-screen py-6 overflow-y-scroll max-w-[48rem]"
+    class="flex flex-col gap-6 max-h-screen sm:py-6 pb-6 pt-4 overflow-y-scroll max-w-[48rem]"
   >
     <TwitterPost
       :key="posts.indexOf(post)"

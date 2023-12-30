@@ -1,11 +1,24 @@
 <template>
-  <div class="flex flex-col gap-1 [&>button]:text-left [&>button]:w-fit py-6">
+  <!-- TODO: refactor this mess -->
+  <div
+    class="flex flex-col gap-1 [&>button]:text-left [&>button]:w-fit sm:py-6 pt-6"
+  >
+    <button
+      :class="
+        'text-fg-active whitespace-nowrap pr-0.5 hover:text-[#fff]' +
+        (menuItem === 'none' ? ' hidden' : ' sm:hidden')
+      "
+      @click="setMenuItem('none')"
+    >
+      {{ '< назад' }}
+    </button>
     <button
       v-if="mainMenu.title.enabled"
       @click="setMenuItem('twitter')"
       :class="
         'text-fg-active whitespace-nowrap pr-0.5 hover:text-[#fff]' +
-        (menuItem === 'twitter' ? ' underline' : ' ')
+        (menuItem === 'twitter' ? ' underline' : ' ') +
+        (menuItem !== 'none' ? ' hidden sm:inline' : '')
       "
     >
       {{ mainMenu.title.name }}
@@ -14,7 +27,9 @@
       v-if="mainMenu.album.enabled"
       @click="setMenuItem('album')"
       :class="
-        (menuItem === 'album' ? 'text-fg-active underline ' : ' ') + 'menu-item'
+        (menuItem === 'album' ? 'text-fg-active underline ' : ' ') +
+        'menu-item' +
+        (menuItem !== 'none' ? ' hidden sm:inline' : '')
       "
     >
       {{ mainMenu.album.name }}
@@ -24,7 +39,8 @@
       @click="setMenuItem('streaming')"
       :class="
         (menuItem === 'streaming' ? 'text-fg-active underline ' : ' ') +
-        'menu-item'
+        'menu-item' +
+        (menuItem !== 'none' ? ' hidden sm:inline' : '')
       "
     >
       {{ mainMenu.streaming.name }}
@@ -33,7 +49,9 @@
       v-if="mainMenu.pix.enabled"
       @click="setMenuItem('pix')"
       :class="
-        (menuItem === 'pix' ? 'text-fg-active underline ' : ' ') + 'menu-item'
+        (menuItem === 'pix' ? 'text-fg-active underline ' : ' ') +
+        'menu-item' +
+        (menuItem !== 'none' ? ' hidden sm:inline' : '')
       "
     >
       {{ mainMenu.pix.name }}

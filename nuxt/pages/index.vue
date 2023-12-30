@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-8">
+  <div class="flex flex-col sm:flex-row sm:gap-8">
     <MainMenu />
     <TrackList v-if="menuItem === 'album'" />
     <Lyrics v-if="menuItem === 'album' && currentTrack.name !== 'none'" />
