@@ -12,6 +12,7 @@
         @click="
           () => {
             setCurrentTrack(track)
+            stopAllTracks(track)
           }
         "
       >
@@ -24,12 +25,48 @@
 </template>
 
 <script setup lang="ts">
+import { useSound } from '@vueuse/sound'
+import { buildFileUrl, parseFileAssetId } from '@sanity/asset-utils'
+
 const { currentTrack } = storeToRefs(useGlobalStore())
 const { setCurrentTrack } = useGlobalStore()
 
 const query = groq`*[_type == "trackList"].tracks [0]`
 const { data } = await useSanityQuery<Track[]>(query)
 const trackList = data.value ? data.value : []
+
+const config = useSanity().config
+
+const audioList: ReturnedValue[] = []
+
+const currentAudio = ref<ReturnedValue>()
+
+for (let track of trackList) {
+  audioList.push(
+    useSound(
+      buildFileUrl(parseFileAssetId(track.mp3.asset._ref), {
+        dataset: config.dataset,
+        projectId: config.projectId,
+      })
+    )
+  )
+}
+
+console.log(audioList)
+
+const stopAllTracks = (track: Track) => {
+  currentAudio.value = audioList[trackList.indexOf(track)]
+
+  currentAudio.value.isPlaying
+    ? currentAudio.value.stop()
+    : currentAudio.value.play()
+
+  for (let audio of audioList) {
+    if (trackList.indexOf(track) !== audioList.indexOf(audio)) {
+      audio.stop()
+    }
+  }
+}
 
 const getTrackNameString = (track: Track): string => {
   const trackNum = trackList.indexOf(track) + 1
