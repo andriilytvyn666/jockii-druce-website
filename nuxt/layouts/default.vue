@@ -3,6 +3,8 @@
     <div class="flex flex-col grow mx-8">
       <slot />
     </div>
-    <!-- <Footer /> -->
+    <DevOnly>
+      <BreakpointDebug />
+    </DevOnly>
   </div>
 </template>
