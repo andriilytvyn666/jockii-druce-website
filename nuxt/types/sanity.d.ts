@@ -1,15 +1,7 @@
-type twitterPost = {
-  post: string
-}
-
 type Track = {
   name: string
   lyrics: Any
   mp3: audio
-}
-
-type Twitter = {
-  posts: twitterPost[]
 }
 
 type StreamingLinks = {

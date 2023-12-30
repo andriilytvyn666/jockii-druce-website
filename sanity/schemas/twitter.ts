@@ -6,14 +6,15 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'name',
-      type: 'string',
-      validation: (rule: Rule) => rule.min(3).required(),
-    },
-    {
       name: 'posts',
       type: 'array',
-      of: [{type: 'twitterPost'}],
+      of: [
+        {
+          type: 'string',
+          description: '32-128 characters long post',
+          validation: (rule: Rule) => rule.min(32).max(256).required(),
+        },
+      ],
       validation: (rule: Rule) => rule.required(),
     },
   ],

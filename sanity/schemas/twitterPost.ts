@@ -8,7 +8,7 @@ export default {
     {
       name: 'post',
       type: 'string',
-      description: '32-128 characters long post',
+      description: '16-128 characters long post',
       validation: (rule: Rule) => rule.min(32).max(128).required(),
     },
   ],

@@ -21,11 +21,11 @@ export default defineConfig({
           .items([
             S.listItem()
               .title('Main Menu')
-              .child(S.document().schemaType('mainMenu').documentId('mainMenu')),
+              .child(S.document().title('Main Menu').schemaType('mainMenu').documentId('mainMenu')),
             S.listItem()
               .title('Twitter')
               .icon(TwitterIcon)
-              .child(S.document().schemaType('twitter').documentId('twitter')),
+              .child(S.document().title('Twitter').schemaType('twitter').documentId('twitter')),
             S.listItem()
               .title('Tracks')
               .icon(IoMusicalNotes)
