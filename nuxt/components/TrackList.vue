@@ -6,8 +6,9 @@
       :key="track.name"
       v-for="track in trackList"
       :class="
-        (currentTrack.name === track.name ? 'text-fg-active  underline ' : '') +
-        'flex gap-2 track'
+        (currentTrack.name === track.name
+          ? 'text-fg-active whitespace-nowrap underline '
+          : '') + 'flex gap-2 track'
       "
       @click="
         () => {
@@ -16,9 +17,7 @@
         }
       "
     >
-      <span :class="'whitespace-nowrap'">
-        {{ getTrackNameString(track) }}
-      </span>
+      {{ getTrackNameString(track) }}
     </button>
   </div>
 </template>
