@@ -4,6 +4,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
+    '@vueuse/motion/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
     'nuxt-icons',

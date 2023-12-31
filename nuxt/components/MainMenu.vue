@@ -6,8 +6,7 @@
     <button
       :class="
         'text-fg-active whitespace-nowrap pr-0.5 hover:text-[#fff]' +
-        (menuItem === 'none' ? ' hidden' : ' sm:hidden') +
-        (menuItem === 'pix' ? ' mx-4' : '')
+        (menuItem === 'none' ? ' hidden' : ' sm:hidden')
       "
       @click="setMenuItem('none')"
     >
