@@ -9,6 +9,10 @@
     display: none;
   }
 
+  ::selection {
+    @apply bg-[#242424];
+  }
+
   body {
     @apply bg-bg text-fg sm:text-body text-body-lg;
   }

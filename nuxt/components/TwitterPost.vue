@@ -1,5 +1,5 @@
 <template>
-  <div class="flex hover:text-fg-active cursor-pointer">
+  <div class="flex hover:text-fg-active">
     {{ $props.post }}
   </div>
 </template>
