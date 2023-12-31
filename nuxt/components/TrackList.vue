@@ -1,12 +1,12 @@
 <template>
   <div
-    class="overflow-y-scroll flex flex-col gap-1 max-h-screen min-w-fit sm:h-screen sm:justify-center pb-6 pt-1 sm:py-0"
+    class="overflow-y-scroll select-none flex flex-col gap-1 max-h-screen min-w-fit sm:h-screen sm:justify-center pb-6 pt-1 sm:py-0"
   >
     <button
       :key="track.name"
       v-for="track in trackList"
       :class="
-        (currentTrack.name === track.name ? 'text-fg-active underline ' : '') +
+        (currentTrack.name === track.name ? 'text-fg-active  underline ' : '') +
         'flex gap-2 track'
       "
       @click="

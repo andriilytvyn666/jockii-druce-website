@@ -1,7 +1,7 @@
 <template>
   <!-- TODO: refactor this mess -->
   <div
-    class="flex sm:h-screen sm:justify-center flex-col gap-1 [&>button]:text-left [&>button]:w-fit pt-4 sm:py-0"
+    class="select-none flex sm:h-screen sm:justify-center flex-col gap-1 [&>button]:text-left [&>button]:w-fit pt-4 sm:py-0"
   >
     <button
       :class="
