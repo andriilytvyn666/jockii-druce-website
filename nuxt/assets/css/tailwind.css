@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  ::selection {
+    @apply bg-[#242424];
+  }
+
+  body {
+    @apply bg-bg text-fg sm:text-body text-body-lg;
+  }
+
+  * {
+    scrollbar-width: none;
+    @apply transition-all ease-in-out duration-300;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+}
