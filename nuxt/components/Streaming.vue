@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col sm:gap-1 gap-1.5 [&>button]:text-left [&>button]:w-fit sm:py-6 pb-6 pt-1"
+    class="flex flex-col sm:gap-1 gap-1.5 [&>button]:text-left [&>button]:w-fit sm:py-0 sm:h-screen sm:justify-center pb-6 pt-1"
   >
     <a :href="links.spotify" target="_blank" class="button-group">
       <NuxtIcon name="streaming/spotify" />

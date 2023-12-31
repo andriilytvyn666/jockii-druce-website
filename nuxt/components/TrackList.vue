@@ -1,26 +1,25 @@
 <template>
-  <div class="overflow-y-scroll max-h-screen sm:py-6 pb-6 pt-1">
-    <div class="flex flex-col gap-1">
-      <button
-        :key="track.name"
-        v-for="track in trackList"
-        :class="
-          (currentTrack.name === track.name
-            ? 'text-fg-active underline '
-            : '') + 'flex gap-2 track'
-        "
-        @click="
-          () => {
-            setCurrentTrack(track)
-            stopAllTracks(track)
-          }
-        "
-      >
-        <span :class="'whitespace-nowrap'">
-          {{ getTrackNameString(track) }}
-        </span>
-      </button>
-    </div>
+  <div
+    class="overflow-y-scroll flex flex-col gap-1 max-h-screen sm:h-screen sm:justify-center pb-6 pt-1 sm:py-0"
+  >
+    <button
+      :key="track.name"
+      v-for="track in trackList"
+      :class="
+        (currentTrack.name === track.name ? 'text-fg-active underline ' : '') +
+        'flex gap-2 track'
+      "
+      @click="
+        () => {
+          setCurrentTrack(track)
+          stopAllTracks(track)
+        }
+      "
+    >
+      <span :class="'whitespace-nowrap'">
+        {{ getTrackNameString(track) }}
+      </span>
+    </button>
   </div>
 </template>
 

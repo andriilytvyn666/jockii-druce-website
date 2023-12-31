@@ -1,6 +1,8 @@
 <template>
   <!-- TODO: refactor this mess -->
-  <div class="flex flex-col gap-1 [&>button]:text-left [&>button]:w-fit pt-6">
+  <div
+    class="flex sm:h-screen sm:justify-center flex-col gap-1 [&>button]:text-left [&>button]:w-fit pt-6 sm:py-0"
+  >
     <button
       :class="
         'text-fg-active whitespace-nowrap pr-0.5 hover:text-[#fff]' +

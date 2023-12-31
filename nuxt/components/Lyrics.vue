@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex overflow-visible sm:overflow-y-scroll sm:max-h-screen sm:py-6 pb-8"
+    class="flex overflow-visible sm:overflow-y-scroll sm:max-h-screen sm:pt-[30vh] sm:py-6 pb-8"
   >
     <span>
       <PortableText :key="currentTrack.name" :value="currentTrack.lyrics" />
