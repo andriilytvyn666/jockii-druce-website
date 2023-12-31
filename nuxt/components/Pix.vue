@@ -1,18 +1,18 @@
 <template>
   <div
-    class="sm:ml-4 flex flex-col sm:overflow-y-scroll sm:max-h-screen sm:py-6 pt-4 max-w-[48rem] [&>*]:w-fit"
+    class="sm:ml-4 flex flex-col sm:overflow-y-scroll sm:max-h-screen sm:py-6 pb-6 pt-4 max-w-[48rem] [&>*]:w-fit"
   >
     <!-- TODO: add video support -->
     <!-- <video class="w-full" controls>
       <source type="video/mp4" src="/video.mp4" />
     </video> -->
 
-    <!-- TODO: use NuxtImage or SanityImage -->
     <SanityImage
       :key="image.asset._ref"
       v-for="image in images"
       :asset-id="image.asset._ref"
       max-w="768"
+      v-motion-fade-once
     />
   </div>
 </template>
