@@ -1,6 +1,6 @@
 <template>
   <div
-    class="overflow-y-scroll flex flex-col gap-1 max-h-screen sm:h-screen sm:justify-center pb-6 pt-1 sm:py-0"
+    class="overflow-y-scroll flex flex-col gap-1 max-h-screen min-w-fit sm:h-screen sm:justify-center pb-6 pt-1 sm:py-0"
   >
     <button
       :key="track.name"

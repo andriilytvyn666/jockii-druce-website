@@ -1,5 +1,9 @@
 <template>
-  <div class="flex flex-col sm:flex-row sm:gap-8">
+  <div
+    :class="`flex flex-col sm:flex-row sm:gap-8 ${
+      menuItem !== 'pix' ? 'mx-4' : ''
+    }`"
+  >
     <MainMenu />
     <TrackList v-if="menuItem === 'album'" />
     <Lyrics v-if="menuItem === 'album' && currentTrack.name !== 'none'" />
