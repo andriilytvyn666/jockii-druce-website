@@ -1,7 +1,7 @@
 <template>
   <div
     :class="`flex flex-col sm:flex-row sm:gap-8 ${
-      menuItem !== 'pix' ? 'mx-4' : ''
+      menuItem !== 'pix' ? 'mx-4 sm:mx-0' : ''
     }`"
   >
     <MainMenu />
